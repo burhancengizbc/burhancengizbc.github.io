@@ -17,7 +17,8 @@
             /* Sosyal Medya Renkleri */
             --fb-color: #1877F2;
             --ig-color: #E4405F;
-            --tt-color: #ff0050; /* TikTok'un imza kırmızısı */
+            --tt-color: #ff0050;
+            --mail-color: #00bcd4;
         }
 
         body {
@@ -129,8 +130,13 @@
             text-align: center;
             padding: 4rem 1rem;
             border-top: 1px solid var(--secondary-color);
+        }
+
+        .contact-title {
             font-family: 'JetBrains Mono', monospace;
-            font-size: 0.9rem;
+            font-size: 1.2rem;
+            color: white;
+            margin-bottom: 20px;
         }
 
         .social-links {
@@ -142,28 +148,20 @@
 
         .social-links a {
             text-decoration: none;
-            font-size: 2rem; /* İkon boyutu */
-            color: var(--text-main); /* Varsayılan renk */
+            font-size: 2rem;
+            color: var(--text-main);
             transition: transform 0.3s ease, color 0.3s ease, filter 0.3s ease;
         }
 
-        /* Hover Efektleri ve Orijinal Renkler */
-        .social-links a.facebook:hover {
-            color: var(--fb-color);
-            transform: translateY(-5px) scale(1.1);
-            filter: drop-shadow(0 0 10px rgba(24, 119, 242, 0.5));
-        }
+        .social-links a.mail:hover { color: var(--mail-color); transform: translateY(-5px); filter: drop-shadow(0 0 8px var(--mail-color)); }
+        .social-links a.facebook:hover { color: var(--fb-color); transform: translateY(-5px); filter: drop-shadow(0 0 8px var(--fb-color)); }
+        .social-links a.instagram:hover { color: var(--ig-color); transform: translateY(-5px); filter: drop-shadow(0 0 8px var(--ig-color)); }
+        .social-links a.tiktok:hover { color: var(--tt-color); transform: translateY(-5px); filter: drop-shadow(0 0 8px var(--tt-color)); }
 
-        .social-links a.instagram:hover {
-            color: var(--ig-color);
-            transform: translateY(-5px) scale(1.1);
-            filter: drop-shadow(0 0 10px rgba(228, 64, 95, 0.5));
-        }
-
-        .social-links a.tiktok:hover {
-            color: var(--tt-color);
-            transform: translateY(-5px) scale(1.1);
-            filter: drop-shadow(0 0 10px rgba(255, 0, 80, 0.5));
+        .footer-text {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+            margin-top: 10px;
         }
 
         @keyframes typing { from { width: 0 } to { width: 100% } }
@@ -214,7 +212,11 @@
 </div>
 
 <footer>
+    <div class="contact-title">İletişim:</div>
     <div class="social-links">
+        <a href="mailto:burhancengizbc@hotmail.com" title="E-Posta Gönder" class="mail">
+            <i class="fas fa-envelope"></i>
+        </a>
         <a href="https://www.facebook.com/BurhanCengizBC/" target="_blank" title="Facebook" class="facebook">
             <i class="fab fa-facebook"></i>
         </a>
@@ -225,8 +227,10 @@
             <i class="fab fa-tiktok"></i>
         </a>
     </div>
-    <p>JavaScript ile Özenle Geliştirildi | &copy; 2026 burhancengiz.com</p>
-    <a href="/privacy-policy.html" style="color: var(--text-main); text-decoration: none; opacity: 0.6;">Gizlilik Politikası</a>
+    <div class="footer-text">
+        <p>JavaScript ile Özenle Geliştirildi | &copy; 2026 burhancengiz.com</p>
+        <a href="/privacy-policy.html" style="color: var(--text-main); text-decoration: none; opacity: 0.6;">Gizlilik Politikası</a>
+    </div>
 </footer>
 
 </body>
