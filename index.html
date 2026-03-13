@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Burhan Cengiz | Yazılım Geliştirici</title>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
             --bg-color: #0d1117;
@@ -12,6 +13,11 @@
             --text-main: #c9d1d9;
             --accent-color: #58a6ff;
             --secondary-color: #30363d;
+            
+            /* Sosyal Medya Renkleri */
+            --fb-color: #1877F2;
+            --ig-color: #E4405F;
+            --tt-color: #ff0050; /* TikTok'un imza kırmızısı */
         }
 
         body {
@@ -128,20 +134,36 @@
         }
 
         .social-links {
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
+            display: flex;
+            justify-content: center;
+            gap: 25px;
         }
 
         .social-links a {
             text-decoration: none;
-            font-size: 1.8rem;
-            margin: 0 12px;
-            transition: transform 0.3s ease, filter 0.3s ease;
-            display: inline-block;
+            font-size: 2rem; /* İkon boyutu */
+            color: var(--text-main); /* Varsayılan renk */
+            transition: transform 0.3s ease, color 0.3s ease, filter 0.3s ease;
         }
 
-        .social-links a:hover {
-            transform: translateY(-5px);
-            filter: drop-shadow(0 0 8px var(--accent-color));
+        /* Hover Efektleri ve Orijinal Renkler */
+        .social-links a.facebook:hover {
+            color: var(--fb-color);
+            transform: translateY(-5px) scale(1.1);
+            filter: drop-shadow(0 0 10px rgba(24, 119, 242, 0.5));
+        }
+
+        .social-links a.instagram:hover {
+            color: var(--ig-color);
+            transform: translateY(-5px) scale(1.1);
+            filter: drop-shadow(0 0 10px rgba(228, 64, 95, 0.5));
+        }
+
+        .social-links a.tiktok:hover {
+            color: var(--tt-color);
+            transform: translateY(-5px) scale(1.1);
+            filter: drop-shadow(0 0 10px rgba(255, 0, 80, 0.5));
         }
 
         @keyframes typing { from { width: 0 } to { width: 100% } }
@@ -150,6 +172,8 @@
         @media (max-width: 600px) {
             h1 { font-size: 2.5rem; }
             .typewriter { font-size: 1rem; }
+            .social-links { gap: 15px; }
+            .social-links a { font-size: 1.7rem; }
         }
     </style>
 </head>
@@ -191,9 +215,15 @@
 
 <footer>
     <div class="social-links">
-        <a href="https://www.facebook.com/BurhanCengizBC/" target="_blank" title="Facebook">📘</a>
-        <a href="https://www.instagram.com/burhancengizbc/" target="_blank" title="Instagram">📸</a>
-        <a href="https://www.tiktok.com/@burhancengizbc" target="_blank" title="TikTok">🎵</a>
+        <a href="https://www.facebook.com/BurhanCengizBC/" target="_blank" title="Facebook" class="facebook">
+            <i class="fab fa-facebook"></i>
+        </a>
+        <a href="https://www.instagram.com/burhancengizbc/" target="_blank" title="Instagram" class="instagram">
+            <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://www.tiktok.com/@burhancengizbc" target="_blank" title="TikTok" class="tiktok">
+            <i class="fab fa-tiktok"></i>
+        </a>
     </div>
     <p>JavaScript ile Özenle Geliştirildi | &copy; 2026 burhancengiz.com</p>
     <a href="/privacy-policy.html" style="color: var(--text-main); text-decoration: none; opacity: 0.6;">Gizlilik Politikası</a>
