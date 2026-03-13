@@ -4,15 +4,110 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gizlilik Politikası | Burhan Cengiz</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        body { font-family: 'Inter', sans-serif; line-height: 1.8; color: #333; max-width: 800px; margin: 40px auto; padding: 0 20px; background: #f9f9f9; }
-        .card { background: white; padding: 40px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
-        h1 { color: #2c3e50; border-bottom: 2px solid #58a6ff; padding-bottom: 10px; }
-        h2 { color: #34495e; margin-top: 30px; }
-        p { margin-bottom: 15px; }
-        .footer { margin-top: 40px; text-align: center; font-size: 0.9rem; color: #7f8c8d; }
-        a { color: #58a6ff; text-decoration: none; }
+        :root {
+            --bg-color: #0d1117;
+            --card-bg: #161b22;
+            --text-main: #c9d1d9;
+            --accent-color: #58a6ff;
+            --secondary-color: #30363d;
+            --fb-color: #1877F2;
+            --ig-color: #E4405F;
+            --tt-color: #ff0050;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            line-height: 1.8;
+            padding: 40px 20px;
+        }
+
+        .card {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            border: 1px solid var(--secondary-color);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        h1 {
+            color: white;
+            font-family: 'JetBrains Mono', monospace;
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+
+        h2 {
+            color: white;
+            margin-top: 30px;
+            font-size: 1.3rem;
+        }
+
+        p, li {
+            color: var(--text-main);
+            font-size: 1rem;
+        }
+
+        ul { padding-left: 20px; }
+
+        .contact-info {
+            background: #1c2128;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        .contact-info div {
+            margin-bottom: 10px;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .contact-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid var(--secondary-color);
+        }
+
+        /* Sosyal Medya Tasarımı */
+        .social-links {
+            margin: 2rem 0;
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+        }
+
+        .social-links a {
+            text-decoration: none;
+            font-size: 1.8rem;
+            color: var(--text-main);
+            transition: transform 0.3s ease, color 0.3s ease, filter 0.3s ease;
+        }
+
+        .social-links a.facebook:hover { color: var(--fb-color); transform: translateY(-5px); filter: drop-shadow(0 0 8px var(--fb-color)); }
+        .social-links a.instagram:hover { color: var(--ig-color); transform: translateY(-5px); filter: drop-shadow(0 0 8px var(--ig-color)); }
+        .social-links a.tiktok:hover { color: var(--tt-color); transform: translateY(-5px); filter: drop-shadow(0 0 8px var(--tt-color)); }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: var(--accent-color);
+            text-decoration: none;
+            font-family: 'JetBrains Mono', monospace;
+        }
     </style>
 </head>
 <body>
@@ -21,32 +116,34 @@
     <h1>Gizlilik Politikası</h1>
     <p>Son Güncelleme: 13 Mart 2026</p>
 
-    <p>Bu gizlilik politikası, <strong>Burhan Cengiz</strong> tarafından geliştirilen mobil uygulamalar ve <strong>burhancengiz.com</strong> web sitesi aracılığıyla toplanan bilgilerin nasıl kullanıldığını açıklar.</p>
+    <p>Bu gizlilik politikası, <strong>Burhan Cengiz</strong> tarafından geliştirilen projeler ve <strong>burhancengiz.com</strong> web sitesi üzerinden toplanan bilgilerin kullanımını kapsar.</p>
 
-    <h2>1. Toplanan Bilgiler</h2>
-    <p>Uygulamalarımız ve web sitemiz, kullanıcılarımızdan doğrudan kişisel kimlik bilgileri (ad, soyad, e-posta adresi vb.) toplamamaktadır. Ancak, hizmet kalitesini artırmak amacıyla anonim kullanım verileri otomatik olarak toplanabilir.</p>
+    <h2>1. Veri Toplama</h2>
+    <p>Projelerimiz doğrudan kişisel kimlik verileri toplamaz. Hizmet kalitemizi artırmak amacıyla anonim kullanım istatistikleri kaydedilebilir.</p>
 
-    <h2>2. Üçüncü Taraf Hizmetler ve Reklamlar</h2>
-    <p>Uygulamalarımızda reklam sunmak amacıyla <strong>Google AdMob</strong> hizmetini kullanmaktayız. Google, ilgi alanlarınıza dayalı reklamlar sunmak için cihazınızdaki reklam kimliğini (IDFA/AAID) ve çerezleri kullanabilir. Bu veriler tamamen anonimdir ve Google'ın kendi gizlilik politikasına tabidir.</p>
+    <h2>2. Reklamlar ve AdMob</h2>
+    <p>Hizmetlerimizde <strong>Google AdMob</strong> reklam altyapısı kullanılmaktadır. Google, size özel reklamlar sunmak için reklam kimliklerini kullanabilir. Bu veriler anonimdir.</p>
 
-    <h2>3. Çerezler (Cookies)</h2>
-    <p>Web sitemiz, kullanıcı deneyimini iyileştirmek ve trafik analizi yapmak amacıyla küçük veri dosyaları olan çerezleri kullanabilir. Tarayıcı ayarlarınızdan çerezleri reddetmeyi seçebilirsiniz.</p>
+    <h2>3. İletişim Bilgileri</h2>
+    <div class="contact-info">
+        <div><strong>Web:</strong> <a href="https://burhancengiz.com">burhancengiz.com</a></div>
+        <div><strong>E-Mail:</strong> <a href="mailto:burhancengizbc@hotmail.com">burhancengizbc@hotmail.com</a></div>
+        <div><strong>Sosyal Medya:</strong> @burhancengizbc</div>
+    </div>
 
-    <h2>4. Çocukların Gizliliği</h2>
-    <p>Uygulamalarımız genel kitleye yöneliktir ve 13 yaşın altındaki çocuklardan bilerek kişisel bilgi toplamaz. Eğer bir çocuğun bize kişisel bilgi verdiğini fark ederseniz, lütfen bizimle iletişime geçin; bu bilgileri derhal sileceğiz.</p>
-
-    <h2>5. İletişim</h2>
-    <p>Bu gizlilik politikası ile ilgili her türlü sorunuz için aşağıdaki kanallardan bize ulaşabilirsiniz:</p>
-    <ul>
-        <li>Web: <a href="https://burhancengiz.com">burhancengiz.com</a></li>
-        <li>Sosyal Medya: @burhancengizbc</li>
-    </ul>
+    <a href="/" class="back-link">← Ana Sayfaya Dön</a>
 </div>
 
-<div class="footer">
-    <p>&copy; 2026 Burhan Cengiz. Tüm hakları saklıdır.</p>
-    <p><a href="/">Ana Sayfaya Dön</a></p>
-</div>
+<footer>
+    <div class="social-links">
+        <a href="https://www.facebook.com/BurhanCengizBC/" target="_blank" class="facebook"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.instagram.com/burhancengizbc/" target="_blank" class="instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.tiktok.com/@burhancengizbc" target="_blank" class="tiktok"><i class="fab fa-tiktok"></i></a>
+    </div>
+    <p style="font-family: 'JetBrains Mono', monospace; font-size: 0.8rem;">
+        JavaScript ile Özenle Geliştirildi | &copy; 2026 burhancengiz.com
+    </p>
+</footer>
 
 </body>
 </html>
