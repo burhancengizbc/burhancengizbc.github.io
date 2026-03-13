@@ -31,7 +31,7 @@
         }
 
         header {
-            height: 60vh;
+            height: 70vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -40,6 +40,14 @@
             border-bottom: 1px solid var(--secondary-color);
             text-align: center;
             padding: 0 1rem;
+        }
+
+        /* Logo Stili */
+        .site-logo {
+            width: 120px;
+            height: 120px;
+            margin-bottom: 1.5rem;
+            filter: drop-shadow(0 0 15px rgba(88, 166, 255, 0.3));
         }
 
         h1 {
@@ -172,12 +180,22 @@
             .typewriter { font-size: 1rem; }
             .social-links { gap: 15px; }
             .social-links a { font-size: 1.7rem; }
+            .site-logo { width: 100px; height: 100px; }
         }
     </style>
 </head>
 <body>
 
 <header>
+    <div class="site-logo">
+        <svg width="100%" height="100%" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <rect width="200" height="200" rx="40" fill="#0d1117"/>
+            <text x="20" y="115" font-family="JetBrains Mono, monospace" font-size="50" font-weight="bold" fill="#58a6ff">&lt;</text>
+            <text x="145" y="115" font-family="JetBrains Mono, monospace" font-size="50" font-weight="bold" fill="#58a6ff">/&gt;</text>
+            <text x="65" y="115" font-family="Inter, sans-serif" font-size="55" font-weight="900" fill="#ffffff">BC</text>
+            <text x="50" y="160" font-family="JetBrains Mono, monospace" font-size="12" fill="#c9d1d9" opacity="0.8">BURHAN CENGİZ</text>
+        </svg>
+    </div>
     <h1>Burhan Cengiz</h1>
     <div class="typewriter">Yazılım Geliştirici & Girişimci;</div>
 </header>
@@ -228,7 +246,7 @@
         </a>
     </div>
     <div class="footer-text">
-        <p>JavaScript| &copy; 2026 burhancengiz.com</p>
+        <p>JavaScript | &copy; 2026 burhancengiz.com</p>
         <a href="/privacy-policy.html" style="color: var(--text-main); text-decoration: none; opacity: 0.6;">Gizlilik Politikası</a>
     </div>
 </footer>
