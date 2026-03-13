@@ -29,7 +29,7 @@
 
         .card {
             max-width: 800px;
-            margin: 0 auto;
+            margin: 0 auto 40px;
             background: var(--card-bg);
             border: 1px solid var(--secondary-color);
             padding: 40px;
@@ -45,46 +45,32 @@
             margin-top: 0;
         }
 
-        h2 {
-            color: white;
-            margin-top: 30px;
-            font-size: 1.3rem;
+        h2 { color: white; margin-top: 30px; font-size: 1.3rem; }
+        p, li { color: var(--text-main); font-size: 1rem; }
+
+        .contact-section {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 1px solid var(--secondary-color);
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        p, li {
-            color: var(--text-main);
-            font-size: 1rem;
-        }
-
-        ul { padding-left: 20px; }
-
-        .contact-info {
-            background: #1c2128;
-            padding: 20px;
-            border-radius: 8px;
-            margin-top: 20px;
-        }
-
-        .contact-info div {
-            margin-bottom: 10px;
+        .contact-details {
             font-family: 'JetBrains Mono', monospace;
+            margin-bottom: 20px;
+            line-height: 2;
         }
 
-        .contact-info a {
+        .contact-details a {
             color: var(--accent-color);
             text-decoration: none;
         }
 
-        footer {
-            text-align: center;
-            margin-top: 50px;
-            padding-top: 20px;
-            border-top: 1px solid var(--secondary-color);
-        }
-
-        /* Sosyal Medya Tasarımı */
         .social-links {
-            margin: 2rem 0;
+            margin: 1.5rem 0;
             display: flex;
             justify-content: center;
             gap: 25px;
@@ -92,7 +78,7 @@
 
         .social-links a {
             text-decoration: none;
-            font-size: 1.8rem;
+            font-size: 2rem;
             color: var(--text-main);
             transition: transform 0.3s ease, color 0.3s ease, filter 0.3s ease;
         }
@@ -101,9 +87,16 @@
         .social-links a.instagram:hover { color: var(--ig-color); transform: translateY(-5px); filter: drop-shadow(0 0 8px var(--ig-color)); }
         .social-links a.tiktok:hover { color: var(--tt-color); transform: translateY(-5px); filter: drop-shadow(0 0 8px var(--tt-color)); }
 
-        .back-link {
-            display: inline-block;
+        .footer-text {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+            opacity: 0.7;
             margin-top: 20px;
+        }
+
+        .back-btn {
+            display: inline-block;
+            margin-bottom: 20px;
             color: var(--accent-color);
             text-decoration: none;
             font-family: 'JetBrains Mono', monospace;
@@ -113,6 +106,7 @@
 <body>
 
 <div class="card">
+    <a href="/" class="back-btn">← Ana Sayfaya Dön</a>
     <h1>Gizlilik Politikası</h1>
     <p>Son Güncelleme: 13 Mart 2026</p>
 
@@ -122,28 +116,26 @@
     <p>Projelerimiz doğrudan kişisel kimlik verileri toplamaz. Hizmet kalitemizi artırmak amacıyla anonim kullanım istatistikleri kaydedilebilir.</p>
 
     <h2>2. Reklamlar ve AdMob</h2>
-    <p>Hizmetlerimizde <strong>Google AdMob</strong> reklam altyapısı kullanılmaktadır. Google, size özel reklamlar sunmak için reklam kimliklerini kullanabilir. Bu veriler anonimdir.</p>
+    <p>Hizmetlerimizde <strong>Google AdMob</strong> reklam altyapısı kullanılmaktadır. Google, size özel reklamlar sunmak için reklam kimliklerini kullanabilir.</p>
+</div>
 
-    <h2>3. İletişim Bilgileri</h2>
-    <div class="contact-info">
+<div class="contact-section">
+    <div class="contact-details">
         <div><strong>Web:</strong> <a href="https://burhancengiz.com">burhancengiz.com</a></div>
         <div><strong>E-Mail:</strong> <a href="mailto:burhancengizbc@hotmail.com">burhancengizbc@hotmail.com</a></div>
         <div><strong>Sosyal Medya:</strong> @burhancengizbc</div>
     </div>
 
-    <a href="/" class="back-link">← Ana Sayfaya Dön</a>
-</div>
-
-<footer>
     <div class="social-links">
         <a href="https://www.facebook.com/BurhanCengizBC/" target="_blank" class="facebook"><i class="fab fa-facebook"></i></a>
         <a href="https://www.instagram.com/burhancengizbc/" target="_blank" class="instagram"><i class="fab fa-instagram"></i></a>
         <a href="https://www.tiktok.com/@burhancengizbc" target="_blank" class="tiktok"><i class="fab fa-tiktok"></i></a>
     </div>
-    <p style="font-family: 'JetBrains Mono', monospace; font-size: 0.8rem;">
+
+    <div class="footer-text">
         JavaScript ile Özenle Geliştirildi | &copy; 2026 burhancengiz.com
-    </p>
-</footer>
+    </div>
+</div>
 
 </body>
 </html>
