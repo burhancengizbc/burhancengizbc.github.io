@@ -16,7 +16,7 @@
             --fb-color: #1877F2;
             --ig-color: #E4405F;
             --tt-color: #ff0050;
-            --mail-color: #00bcd4; /* Mail ikonu için modern bir camgöbeği */
+            --mail-color: #00bcd4;
         }
 
         body {
@@ -46,8 +46,10 @@
             margin-top: 0;
         }
 
-        h2 { color: white; margin-top: 30px; font-size: 1.3rem; }
+        h2 { color: white; margin-top: 30px; font-size: 1.3rem; font-family: 'JetBrains Mono', monospace; }
         p, li { color: var(--text-main); font-size: 1rem; }
+        ul { padding-left: 20px; }
+        li { margin-bottom: 10px; }
 
         .contact-section {
             text-align: center;
@@ -80,7 +82,6 @@
             transition: transform 0.3s ease, color 0.3s ease, filter 0.3s ease;
         }
 
-        /* Hover Efektleri */
         .social-links a.mail:hover { color: var(--mail-color); transform: translateY(-5px); filter: drop-shadow(0 0 8px var(--mail-color)); }
         .social-links a.facebook:hover { color: var(--fb-color); transform: translateY(-5px); filter: drop-shadow(0 0 8px var(--fb-color)); }
         .social-links a.instagram:hover { color: var(--ig-color); transform: translateY(-5px); filter: drop-shadow(0 0 8px var(--ig-color)); }
@@ -107,19 +108,36 @@
 <div class="card">
     <a href="/" class="back-btn">← Ana Sayfaya Dön</a>
     <h1>Gizlilik Politikası</h1>
-    <p>Son Güncelleme: 13 Mart 2026</p>
+    <p>Son Güncelleme: 14 Mart 2026</p>
 
-    <p>Bu gizlilik politikası, <strong>Burhan Cengiz</strong> tarafından geliştirilen projeler ve <strong>burhancengiz.com</strong> web sitesi üzerinden toplanan bilgilerin kullanımını kapsar.</p>
+    <p>Bu Gizlilik Politikası, <strong>Burhan Cengiz</strong> ("biz", "tarafımızca") tarafından sunulan <strong>burhancengiz.com</strong> web sitesi ve mobil uygulamaların (Harita Avı vb.) kullanımı sırasında verilerinizin nasıl işlendiğini açıklar.</p>
 
-    <h2>1. Veri Toplama</h2>
-    <p>Projelerimiz doğrudan kişisel kimlik verileri toplamaz. Hizmet kalitemizi artırmak amacıyla anonim kullanım istatistikleri kaydedilebilir.</p>
+    <h2>1. Toplanan Veriler ve Kullanım Amacı</h2>
+    <p>Hizmetlerimizi kullanırken sağladığınız veriler iki ana kategoriye ayrılır:</p>
+    <ul>
+        <li><strong>Kişisel Veriler:</strong> İletişim formları veya bülten kayıtları sırasında kendi isteğinizle sağladığınız e-posta adresi gibi bilgilerdir. Bu veriler sadece sizinle iletişim kurmak için kullanılır.</li>
+        <li><strong>Log Verileri:</strong> Tarayıcı türü, IP adresi (anonimleştirilmiş), ziyaret edilen sayfalar ve uygulama içi etkileşim süresi gibi istatistiksel verilerdir. Bu veriler sistem performansını analiz etmek için kullanılır.</li>
+    </ul>
 
-    <h2>2. Reklamlar ve AdMob</h2>
-    <p>Hizmetlerimizde <strong>Google AdMob</strong> reklam altyapısı kullanılmaktadır. Google, size özel reklamlar sunmak için reklam kimliklerini kullanabilir.</p>
+    <h2>2. Reklamlar ve Üçüncü Taraf Hizmetleri</h2>
+    <p>Hizmetlerimizin ücretsiz kalmasını sağlamak amacıyla üçüncü taraf reklam ağlarını kullanıyoruz:</p>
+    <ul>
+        <li><strong>Google AdMob:</strong> Uygulamalarımızda Google tarafından sunulan reklamlar yer alabilir. Google, ilgi alanınıza dayalı reklamlar sunmak için cihazınızdaki reklam kimliklerini (IDFA veya AAID) kullanabilir.</li>
+        <li><strong>Çerezler (Cookies):</strong> Web sitemiz, kullanıcı deneyimini iyileştirmek ve trafik analizi yapmak için çerezler kullanır. Tarayıcı ayarlarınızdan çerezleri reddedebilirsiniz.</li>
+    </ul>
+
+    <h2>3. Veri Güvenliği</h2>
+    <p>Verilerinizin güvenliği bizim için önceliklidir. Toplanan bilgiler yetkisiz erişime, değişikliğe veya ifşa edilmesine karşı endüstri standartlarında koruma altındadır. Ancak internet üzerinden yapılan hiçbir iletim yönteminin %100 güvenli olmadığını hatırlatmak isteriz.</p>
+
+    <h2>4. Çocukların Gizliliği</h2>
+    <p>Hizmetlerimiz çocuklara yönelik eğitici içerikler içerebilir. 13 yaşından küçük kullanıcılardan bilerek kişisel veri toplamıyoruz. Eğer bir çocuğun bize veri sağladığını fark ederseniz, lütfen bizimle iletişime geçin; bu bilgileri sunucularımızdan derhal sileriz.</p>
+
+    <h2>5. Değişiklikler ve İletişim</h2>
+    <p>Bu gizlilik politikası zaman zaman güncellenebilir. Değişiklikler bu sayfada yayınlandığı andan itibaren geçerli sayılır. Politikamız hakkında sorularınız varsa aşağıdaki kanallardan bize ulaşabilirsiniz.</p>
 </div>
 
 <div class="contact-section">
-    <div class="contact-title">İletişim:</div>
+    <div class="contact-title">İletişim & Destek:</div>
 
     <div class="social-links">
         <a href="mailto:burhancengizbc@hotmail.com" title="E-Posta Gönder" class="mail">
@@ -137,7 +155,7 @@
     </div>
 
     <div class="footer-text">
-        JavaScript ile Özenle Geliştirildi | &copy; 2026 burhancengiz.com
+        JavaScript & Umut ile Geliştirildi | &copy; 2026 burhancengiz.com
     </div>
 </div>
 
