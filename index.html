@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Burhan Cengiz | Yazılım Geliştirici</title>
     
-    <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/burhancengizbc/burhancengizbc.github.io/main/bclogo.png">
-    
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
@@ -45,10 +43,10 @@
             padding: 0 1rem;
         }
 
-        /* TEPEDEKİ ANA WEB LOGOSU */
+        /* TEPEDEKİ ESKİ LOGO ALANI (Blue Compass) */
         .site-logo {
-            width: 120px;
-            height: auto;
+            width: 140px; /* Paylaştığın görüntüye uygun genişlik */
+            height: 140px;
             margin-bottom: 1.5rem;
             filter: drop-shadow(0 0 15px rgba(88, 166, 255, 0.3));
         }
@@ -173,12 +171,12 @@
             font-family: 'JetBrains Mono', monospace;
             font-size: 0.9rem;
             margin-top: 10px;
-            color: white;
+            color: white; /* Tüm Hakları Saklıdır yazısı beyaz kalır */
         }
 
         /* Linklerin Sabit Beyaz Kalması */
         .footer-text a {
-            color: white !important;
+            color: white !important; /* burhancengiz.com ve Gizlilik Politikası linkleri beyaz kalır */
             text-decoration: none;
             font-weight: bold;
         }
@@ -199,14 +197,22 @@
             .typewriter { font-size: 1rem; }
             .social-links { gap: 15px; }
             .social-links a { font-size: 1.7rem; }
-            .site-logo { width: 100px; }
+            .site-logo { width: 100px; height: 100px; }
         }
     </style>
 </head>
 <body>
 
 <header>
-    <img src="https://raw.githubusercontent.com/burhancengizbc/burhancengizbc.github.io/main/bclogo.png" alt="Burhan Cengiz Logo" class="site-logo">
+    <div class="site-logo">
+        <svg width="100%" height="100%" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <rect width="200" height="200" rx="40" fill="#161b22"/>
+            <text x="20" y="115" font-family="JetBrains Mono, monospace" font-size="50" font-weight="bold" fill="#58a6ff">&lt;</text>
+            <text x="145" y="115" font-family="JetBrains Mono, monospace" font-size="50" font-weight="bold" fill="#58a6ff">/&gt;</text>
+            <text x="65" y="115" font-family="Inter, sans-serif" font-size="55" font-weight="900" fill="#ffffff">BC</text>
+            <text x="50" y="160" font-family="JetBrains Mono, monospace" font-size="12" fill="#c9d1d9" opacity="0.8">  BLUE COMPASS</text>
+        </svg>
+    </div>
     <h1>Burhan CENGİZ</h1>
     <div class="typewriter">Yazılım Geliştirici & Girişimci;</div>
 </header>
