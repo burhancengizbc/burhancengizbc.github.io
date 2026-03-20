@@ -42,10 +42,10 @@
             padding: 0 1rem;
         }
 
-        /* Ana Sayfa Logo Bölümü (SVG BC Logo) */
+        /* TEPEDEKİ ANA WEB LOGOSU (bclogo.png) */
         .site-logo {
-            width: 120px;
-            height: 120px;
+            width: 120px; /* Logonun genişliği */
+            height: auto;
             margin-bottom: 1.5rem;
             filter: drop-shadow(0 0 15px rgba(88, 166, 255, 0.3));
         }
@@ -141,13 +141,6 @@
             border-top: 1px solid var(--secondary-color);
         }
 
-        .footer-logo {
-            width: 60px;
-            height: auto;
-            margin-bottom: 20px;
-            filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.1));
-        }
-
         .contact-title {
             font-family: 'JetBrains Mono', monospace;
             font-size: 1.2rem;
@@ -181,15 +174,15 @@
             color: white;
         }
 
-        /* Beyaz Link Ayarları */
+        /* BEYAZ SABİT LİNKLER */
         .footer-text a {
-            color: white !important;
+            color: white !important; /* Link rengi hep beyaz */
             text-decoration: none;
             font-weight: bold;
         }
 
         .footer-text a:hover {
-            text-decoration: underline !important;
+            text-decoration: underline !important; /* Üzerine gelince altı çizilsin */
         }
 
         .footer-text p {
@@ -204,22 +197,14 @@
             .typewriter { font-size: 1rem; }
             .social-links { gap: 15px; }
             .social-links a { font-size: 1.7rem; }
-            .site-logo { width: 100px; height: 100px; }
+            .site-logo { width: 100px; } /* Mobilde logo biraz küçülsün */
         }
     </style>
 </head>
 <body>
 
 <header>
-    <div class="site-logo">
-        <svg width="100%" height="100%" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-            <rect width="200" height="200" rx="40" fill="#161b22"/>
-            <text x="20" y="115" font-family="JetBrains Mono, monospace" font-size="50" font-weight="bold" fill="#58a6ff">&lt;</text>
-            <text x="145" y="115" font-family="JetBrains Mono, monospace" font-size="50" font-weight="bold" fill="#58a6ff">/&gt;</text>
-            <text x="65" y="115" font-family="Inter, sans-serif" font-size="55" font-weight="900" fill="#ffffff">BC</text>
-            <text x="50" y="160" font-family="JetBrains Mono, monospace" font-size="12" fill="#c9d1d9" opacity="0.8">  BLUE COMPASS</text>
-        </svg>
-    </div>
+    <img src="bclogo.png" alt="Burhan Cengiz Logo" class="site-logo">
     <h1>Burhan CENGİZ</h1>
     <div class="typewriter">Yazılım Geliştirici & Girişimci;</div>
 </header>
@@ -254,7 +239,6 @@
 </div>
 
 <footer>
-    <img src="bclogo.png" alt="BC Logo" class="footer-logo">
     <div class="contact-title">İletişim:</div>
     <div class="social-links">
         <a href="mailto:burhancengizbc@hotmail.com" title="E-Posta Gönder" class="mail">
