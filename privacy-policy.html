@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gizlilik Politikası | Burhan Cengiz</title>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Font Awesome Sürümü 6.5.1'e Güncellendi (X Logosu İçin Şart) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         :root {
             --bg-color: #0d1117;
@@ -16,6 +17,7 @@
             --fb-color: #1877F2;
             --ig-color: #E4405F;
             --tt-color: #ff0050;
+            --x-color: #ffffff; /* X (Twitter) Rengi */
             --mail-color: #00bcd4;
         }
 
@@ -71,6 +73,7 @@
         .social-links {
             margin: 1.5rem 0;
             display: flex;
+            flex-wrap: wrap;
             justify-content: center;
             gap: 25px;
         }
@@ -86,6 +89,7 @@
         .social-links a.facebook:hover { color: var(--fb-color); transform: translateY(-5px); filter: drop-shadow(0 0 8px var(--fb-color)); }
         .social-links a.instagram:hover { color: var(--ig-color); transform: translateY(-5px); filter: drop-shadow(0 0 8px var(--ig-color)); }
         .social-links a.tiktok:hover { color: var(--tt-color); transform: translateY(-5px); filter: drop-shadow(0 0 8px var(--tt-color)); }
+        .social-links a.x-twitter:hover { color: var(--x-color); transform: translateY(-5px); filter: drop-shadow(0 0 8px var(--x-color)); }
 
         .footer-text {
             font-family: 'JetBrains Mono', monospace;
@@ -146,19 +150,19 @@
         <a href="https://x.com/burhancengiz21" target="_blank" title="X (Twitter)" class="x-twitter">
             <i class="fa-brands fa-x-twitter"></i>
         </a>
-        <a href="https://www.facebook.com/BurhanCengizBC/" target="_blank" class="facebook">
+        <a href="https://www.facebook.com/BurhanCengizBC/" target="_blank" title="Facebook" class="facebook">
             <i class="fab fa-facebook"></i>
         </a>
-        <a href="https://www.instagram.com/burhancengizbc/" target="_blank" class="instagram">
+        <a href="https://www.instagram.com/burhancengizbc/" target="_blank" title="Instagram" class="instagram">
             <i class="fab fa-instagram"></i>
         </a>
-        <a href="https://www.tiktok.com/@burhancengizbc" target="_blank" class="tiktok">
+        <a href="https://www.tiktok.com/@burhancengizbc" target="_blank" title="TikTok" class="tiktok">
             <i class="fab fa-tiktok"></i>
         </a>
     </div>
 
     <div class="footer-text">
-        JavaScript| &copy; 2026 burhancengiz.com
+        JavaScript | &copy; 2026 burhancengiz.com
     </div>
 </div>
 
