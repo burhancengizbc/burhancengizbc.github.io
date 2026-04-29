@@ -21,6 +21,7 @@
             --fb-color: #1877F2;
             --ig-color: #E4405F;
             --tt-color: #ff0050;
+            --x-color: #ffffff; /* X (Twitter) Rengi */
             --mail-color: #00bcd4;
         }
 
@@ -160,6 +161,7 @@
         .social-links {
             margin-bottom: 2.5rem;
             display: flex;
+            flex-wrap: wrap;
             justify-content: center;
             gap: 25px;
         }
@@ -177,6 +179,7 @@
         .social-links a.facebook:hover { color: var(--fb-color); filter: drop-shadow(0 0 8px var(--fb-color)); }
         .social-links a.instagram:hover { color: var(--ig-color); filter: drop-shadow(0 0 8px var(--ig-color)); }
         .social-links a.tiktok:hover { color: var(--tt-color); filter: drop-shadow(0 0 8px var(--tt-color)); }
+        .social-links a.x-twitter:hover { color: var(--x-color); filter: drop-shadow(0 0 8px var(--x-color)); }
 
         .footer-text {
             font-size: 0.95rem;
@@ -224,6 +227,17 @@
 
     <h2 class="section-title">01. Projelerim</h2>
 
+    <!-- YENİ EKLENEN: HALIPRO -->
+    <a href="https://burhancengiz.com/halipro/" class="project-card">
+        <div>
+            <span class="tag">Masaüstü & Web</span>
+            <span class="tag">Otomasyon</span>
+        </div>
+        <h3>🧼 Halı Yıkama Otomasyonu (HalıPro)</h3>
+        <p>İşletmeler için uçtan uca yönetim sağlayan, sipariş takibi ve müşteri yönetimini kolaylaştıran profesyonel otomasyon çözümü.</p>
+        <div style="color: var(--accent-color); font-weight: bold; margin-top: 1rem;">Projeyi İncele →</div>
+    </a>
+
     <a href="https://burhancengizbc.github.io/harita-avi/" class="project-card">
         <div>
             <span class="tag">Web Uygulaması</span>
@@ -250,6 +264,10 @@
     <div class="social-links">
         <a href="mailto:burhancengizbc@hotmail.com" title="E-Posta Gönder" class="mail">
             <i class="fas fa-envelope"></i>
+        </a>
+        <!-- YENİ EKLENEN: X (Twitter) -->
+        <a href="https://x.com/burhancengiz21" target="_blank" title="X (Twitter)" class="x-twitter">
+            <i class="fab fa-x-twitter"></i>
         </a>
         <a href="https://www.facebook.com/BurhanCengizBC/" target="_blank" title="Facebook" class="facebook">
             <i class="fab fa-facebook"></i>
