@@ -3,81 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EhliyetPro</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <title>Harita Avı</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        #logo {
+            width: 200px;
+            opacity: 0; 
+            transition: opacity 1.5s ease-in-out; 
+        }
+    </style>
 </head>
 <body>
-    <header class="hero">
-        <div class="overlay"></div>
-        <div class="topbar">
-            <div class="terminal-left">
-                <span class="dot red"></span>
-                <span class="dot yellow"></span>
-                <span class="dot green"></span>
-                <span class="traffic-mini">🚦</span>
-            </div>
-            <div class="clock" id="clock"></div>
-        </div>
-        <div class="hero-content">
-            <pre class="ascii">
-███████╗██╗  ██╗██╗     ██╗██╗   ██╗███████╗████████╗
-██╔════╝██║  ██║██║     ██║╚██╗ ██╔╝██╔════╝╚══██╔══╝
-█████╗  ███████║██║     ██║ ╚████╔╝ █████╗     ██║
-██╔══╝  ██╔══██║██║     ██║  ╚██╔╝  ██╔══╝     ██║
-███████╗██║  ██║███████╗██║   ██║   ███████╗   ██║
-╚══════╝╚═╝  ╚═╝╚══════╝╚═╝   ╚═╝   ╚══════╝   ╚═╝
-██████╗ ██████╗  ██████╗ 
-██╔══██╗██╔══██╗██╔═══██╗
-██████╔╝██████╔╝██║   ██║
-██╔═══╝ ██╔══██╗██║   ██║
-██║     ██║  ██║╚██████╔╝
-╚═╝     ╚═╝  ╚═╝ ╚═════╝
-            </pre>
-            <h1>TRAFİK SİMÜLASYONU & SINAV PORTALI</h1>
-            <p>Trafik kurallarını öğren. Simülasyonda ustalaş. Ehliyet sınavına profesyonel hazırlan.</p>
-            <div class="buttons">
-                <div class="traffic-box green-box">🚦 Trafik ve Çevre</div>
-                <div class="traffic-box yellow-box">🏥 İlk Yardım</div>
-                <div class="traffic-box red-box">🚘 Motor ve Araç Tekniği</div>
-            </div>
-            <div class="stores">
-                <a href="#" class="store apple"> App Store</a>
-                <a href="#" class="store google">▶ Google Play</a>
-            </div>
-        </div>
-    </header>
 
-    <section class="terminal-section">
-        <div class="terminal">
-            <div class="terminal-header">TRAFFIC_SYSTEM_LOGS</div>
-            <div class="terminal-content" id="terminalContent"></div>
-        </div>
-    </section>
+    <img id="logo" src="logo.png" alt="Harita Avı Logosu">
 
-    <footer>
-        <div class="footer-grid">
-            <div class="footer-box">
-                <h3>📄 Gizlilik</h3>
-                <p>Kullanıcı verileri korunmaktadır.</p>
-            </div>
-            <div class="footer-box">
-                <h3>⚖️ Kullanım</h3>
-                <p>Sistem eğitim amaçlıdır.</p>
-            </div>
-            <div class="footer-box">
-                <h3>🟢 Sunucu</h3>
-                <p>ONLINE</p>
-            </div>
-        </div>
-        <div style="text-align: center; margin-top: 50px;">
-            <div class="social-icons" style="justify-content: center; gap: 20px; display: flex; margin-bottom: 20px;">
-                <a href="#">✉️</a> <a href="#">𝕏</a> <a href="#">📘</a> <a href="#">📸</a> <a href="#">🎵</a>
-            </div>
-            <p class="website-link" style="opacity: 0.7; margin-bottom: 10px;"> burhancengiz.com</p>
-            <p class="copy" style="opacity: 0.5;">© 2026 EhliyetPro</p>
-        </div>
-    </footer>
-    <script src="script.js"></script>
+    <script>
+        window.addEventListener('load', () => {
+            const logo = document.getElementById('logo');
+            logo.style.opacity = '1';
+        });
+    </script>
 </body>
 </html>
