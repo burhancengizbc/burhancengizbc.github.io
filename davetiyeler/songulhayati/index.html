@@ -3,51 +3,473 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Düğün Davetiyesi | Songül & Hayati</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Great+Vibes&display=swap" rel="stylesheet">
+    <title>Songül & Hayati Düğün Davetiyesi</title>
+    
+    <!-- Google Fonts: Zarif başlıklar ve okunabilir metinler için -->
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+    
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --primary-color: #c7a7a9; /* Soft rose gold/pudra rengi */
+            --bg-color: #fcf9f9;
+            --text-dark: #333333;
+            --text-light: #777777;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Playfair Display', serif;
+            background-color: var(--bg-color);
+            color: var(--text-dark);
+            overflow-x: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        /* Arka plan animasyonu ve kaplama */
+        .background-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #fffafa 0%, #f7e8e9 100%);
+            z-index: -2;
+        }
+
+        /* Uçuşan Kalpler Animasyonu */
+        .hearts-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .heart {
+            position: absolute;
+            bottom: -5vh;
+            font-size: 20px;
+            color: rgba(199, 167, 169, 0.4);
+            animation: floatUp linear infinite;
+        }
+
+        @keyframes floatUp {
+            0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(-110vh) rotate(360deg); opacity: 0; }
+        }
+
+        /* Ana Davetiye Kartı */
+        .invitation-card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            max-width: 500px;
+            width: 90%;
+            padding: 50px 30px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.05), border: 1px solid rgba(255,255,255,0.5);
+            text-align: center;
+            animation: fadeIn 2s ease-in-out;
+            border: 2px solid var(--primary-color);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* İsimler ve Başlıklar */
+        .couple-names {
+            font-family: 'Great Vibes', cursive;
+            font-size: 3.5rem;
+            color: var(--primary-color);
+            margin: 20px 0;
+            line-height: 1.2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .ampersand {
+            font-size: 2rem;
+            color: var(--text-light);
+            margin: 10px 0;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); color: var(--primary-color); }
+            100% { transform: scale(1); }
+        }
+
+        .invitation-text {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        /* Tarih ve Mekan Bilgileri */
+        .details {
+            margin: 30px 0;
+            padding: 20px;
+            border-top: 1px solid rgba(199, 167, 169, 0.3);
+            border-bottom: 1px solid rgba(199, 167, 169, 0.3);
+        }
+
+        .detail-item {
+            margin: 15px 0;
+        }
+
+        .detail-title {
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+
+        /* Geri Sayım Alanı */
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .time-box {
+            background: var(--bg-color);
+            padding: 10px;
+            border-radius: 8px;
+            min-width: 70px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+            border: 1px solid rgba(199, 167, 169, 0.2);
+        }
+
+        .time-box span {
+            display: block;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .time-box .label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-light);
+            margin-top: 5px;
+        }
+
+        /* Responsive tasarım */
+        @media (max-width: 480px) {
+            .couple-names { font-size: 2.8rem; }
+            .countdown { gap: 10px; }
+            .time-box { min-width: 60px; padding: 8px; }
+            .time-box span { font-size: 1.4rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Arka plan katmanı -->
+    <div class="background-overlay"></div>
+    
+    <!-- Dinamik uçuşan kalpler için container -->
+    <div class="hearts-container" id="hearts-container"></div>
+
+    <!-- Davetiye İçeriği -->
+    <div class="invitation-card">
+        <div class="invitation-text">
+            Birlikteliğimizi sonsuzluğa taşıdığımız bu özel günde,<br>
+            siz değerli sevdiklerimizi de aramızda görmekten mutluluk duyarız.
+        </div>
+
+        <div class="couple-names">
+            <span>Songül</span>
+            <span class="ampersand">&hearts;</span>
+            <span>Hayati</span>
+        </div>
+
+        <div class="details">
+            <div class="detail-item">
+                <div class="detail-title">Tarih</div>
+                <div>25 Eylül 2026, Cuma | 19:30</div>
+            </div>
+            <div class="detail-item">
+                <div class="detail-title">Mekan</div>
+                <div>Zarif Kır Bahçesi & Düğün Salonu</div>
+                <div style="font-size: 0.9em; color: #777; margin-top: 5px;">Göl Kenarı Mevkii, İstanbul</div>
+            </div>
+        </div>
+
+        <div class="detail-title">Büyük Güne Kalan Zaman</div>
+        <div class="countdown" id="countdown">
+            <div class="time-box">
+                <span id="days">00</span>
+                <div class="label">Gün</div>
+            </div>
+            <div class="time-box">
+                <span id="hours">00</span>
+                <div class="label">Saat</div>
+            </div>
+            <div class="time-box">
+                <span id="minutes">00</span>
+                <div class="label">Dakika</div>
+            </div>
+            <div class="time-box">
+                <span id="seconds">00</span>
+                <div class="label">Saniye</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        /* 1. UÇUŞAN KALPLER ANİMASYONU (Canlılık Hissi İçin) */
+        function createHearts() {
+            const container = document.getElementById('hearts-container');
+            const heartCount = 20; // Ekranda görünecek maksimum kalp sayısı
+
+            for(let i = 0; i < heartCount; i++) {
+                let heart = document.createElement('div');
+                heart.classList.add('heart');
+                heart.innerHTML = '&#10084;'; // Kalp emojisi
+                
+                // Rastgele başlangıç pozisyonları, boyutlar ve hızlar
+                heart.style.left = Math.random() * 100 + 'vw';
+                heart.style.animationDuration = (Math.random() * 10 + 10) + 's'; // 10-20 saniye arası
+                heart.style.animationDelay = (Math.random() * 10) + 's';
+                heart.style.fontSize = (Math.random() * 15 + 10) + 'px';
+                
+                container.appendChild(heart);
+            }
+        }
+
+        /* 2. CANLI GERİ SAYIM SAYACI */
+        function startCountdown() {
+            // Düğün tarihini buraya girebilirsiniz (Yıl, Ay(0-11), Gün, Saat, Dakika)
+            // Örnek: 25 Eylül 2026, 19:30
+            const weddingDate = new Date(2026, 8, 25, 19, 30, 0).getTime();
+
+            const timer = setInterval(function() {
+                const now = new Date().getTime();
+                const distance = weddingDate - now;
+
+                if (distance < 0) {
+                    clearInterval(timer);
+                    document.getElementById("countdown").innerHTML = "<div style='color: var(--primary-color); font-size: 1.2rem; font-weight: 600; margin-top: 15px;'>Büyük gün geldi çattı!</div>";
+                    return;
+                }
+
+                // Zaman hesaplamaları
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const secondsİsteğinizi bir yazılım mühendisi titizliğiyle analiz ettim. 
+
+**Analiz ve Eksik Bilgiler:**
+Gelin ve damat isimleri (Songül ve Hayati) ile tasarımın hareketli (canlı) ve şık olması gerektiği net. Ancak tarih, saat, mekan adı ve adres bilgileri belirtilmediği için bu kısımları tasarımı tamamlaması adına örnek verilerle (İzmir'de şık bir mekan varsayımıyla) doldurdum. Kendinize göre kolayca güncelleyebilirsiniz.
+
+**Tasarım Detayları:**
+*   **Tema:** Şıklığı yansıtması için zümrüt yeşili arka plan ve altın rengi (gold) tipografi kullanıldı.
+*   **Canlılık (Animasyon):** JavaScript'e gerek kalmadan, saf CSS kullanılarak arka planda süzülen altın ışıltılar (partiküller) ve isimlerin üzerinde hafif bir parlama efekti oluşturuldu.
+*   **Tipografi:** Zarif bir el yazısı fontu (`Great Vibes`) ve modern okunaklı bir font (`Cinzel`) Google Fonts üzerinden çekildi.
+
+Aşağıdaki kodu `davetiye.html` olarak kaydedip herhangi bir tarayıcıda açabilirsiniz:
+
+```html
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Düğün Davetiyesi | Songül & Hayati</title>
+    <link href="[https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Great+Vibes&display=swap](https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Great+Vibes&display=swap)" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
             background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
             min-height: 100vh;
-            display: flex; justify-content: center; align-items: center;
-            font-family: 'Cinzel', serif; overflow: hidden; color: #d4af37;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Cinzel', serif;
+            overflow: hidden;
+            color: #d4af37;
         }
-        .particles { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; pointer-events: none; }
-        .particle { position: absolute; display: block; width: 5px; height: 5px; background: rgba(212, 175, 55, 0.5); box-shadow: 0 0 10px rgba(212, 175, 55, 0.8); border-radius: 50%; animation: floatUp 10s infinite linear; }
+
+        /* Arka Plan Animasyonları (Canlı Görünüm İçin) */
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .particle {
+            position: absolute;
+            display: block;
+            width: 5px;
+            height: 5px;
+            background: rgba(212, 175, 55, 0.5);
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.8);
+            border-radius: 50%;
+            animation: floatUp 10s infinite linear;
+        }
+
         .particle:nth-child(1) { left: 10%; animation-duration: 8s; width: 3px; height: 3px; }
         .particle:nth-child(2) { left: 30%; animation-duration: 12s; width: 6px; height: 6px; }
         .particle:nth-child(3) { left: 50%; animation-duration: 9s; width: 4px; height: 4px; }
         .particle:nth-child(4) { left: 70%; animation-duration: 15s; width: 7px; height: 7px; }
         .particle:nth-child(5) { left: 90%; animation-duration: 10s; width: 5px; height: 5px; }
-        @keyframes floatUp { 0% { transform: translateY(100vh) scale(0); opacity: 0; } 50% { opacity: 1; } 100% { transform: translateY(-10vh) scale(1.5); opacity: 0; } }
-        .card { background: rgba(15, 32, 39, 0.85); border: 2px solid #d4af37; border-radius: 15px; padding: 3rem 2rem; text-align: center; max-width: 500px; width: 90%; z-index: 2; box-shadow: 0 15px 35px rgba(0,0,0,0.5), 0 0 20px rgba(212, 175, 55, 0.2); backdrop-filter: blur(5px); animation: fadeIn 2s ease-out forwards; opacity: 0; transform: translateY(20px); }
-        @keyframes fadeIn { to { opacity: 1; transform: translateY(0); } }
-        .header { font-size: 1.1rem; letter-spacing: 2px; margin-bottom: 2rem; color: #e5e5e5; }
-        .names { font-family: 'Great Vibes', cursive; font-size: 4.5rem; line-height: 1.2; margin-bottom: 1.5rem; text-shadow: 0 0 15px rgba(212, 175, 55, 0.6); animation: pulseGlow 3s infinite alternate; }
-        @keyframes pulseGlow { from { text-shadow: 0 0 10px rgba(212, 175, 55, 0.4); } to { text-shadow: 0 0 25px rgba(212, 175, 55, 0.9); } }
-        .names span { font-size: 3rem; display: inline-block; margin: 0 10px; color: #c5a059; }
-        .message { font-size: 1rem; line-height: 1.6; margin-bottom: 2.5rem; color: #cccccc; padding: 0 1rem; }
-        .details { border-top: 1px solid rgba(212, 175, 55, 0.3); border-bottom: 1px solid rgba(212, 175, 55, 0.3); padding: 1.5rem 0; margin-bottom: 2rem; }
-        .date-time { font-size: 1.3rem; font-weight: 600; margin-bottom: 0.5rem; letter-spacing: 1px; }
-        .venue { font-size: 1.1rem; color: #e5e5e5; margin-bottom: 0.3rem; }
-        .address { font-size: 0.9rem; color: #999; }
-        @media (max-width: 480px) { .names { font-size: 3.5rem; } .card { padding: 2rem 1.5rem; } }
+
+        @keyframes floatUp {
+            0% { transform: translateY(100vh) scale(0); opacity: 0; }
+            50% { opacity: 1; }
+            100% { transform: translateY(-10vh) scale(1.5); opacity: 0; }
+        }
+
+        /* Davetiye Kartı Tasarımı */
+        .card {
+            background: rgba(15, 32, 39, 0.85);
+            border: 2px solid #d4af37;
+            border-radius: 15px;
+            padding: 3rem 2rem;
+            text-align: center;
+            max-width: 500px;
+            width: 90%;
+            z-index: 2;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5), 0 0 20px rgba(212, 175, 55, 0.2);
+            backdrop-filter: blur(5px);
+            animation: fadeIn 2s ease-out forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .header {
+            font-size: 1.1rem;
+            letter-spacing: 2px;
+            margin-bottom: 2rem;
+            color: #e5e5e5;
+        }
+
+        .names {
+            font-family: 'Great Vibes', cursive;
+            font-size: 4.5rem;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 0 15px rgba(212, 175, 55, 0.6);
+            animation: pulseGlow 3s infinite alternate;
+        }
+
+        @keyframes pulseGlow {
+            from { text-shadow: 0 0 10px rgba(212, 175, 55, 0.4); }
+            to { text-shadow: 0 0 25px rgba(212, 175, 55, 0.9); }
+        }
+
+        .names span {
+            font-size: 3rem;
+            display: inline-block;
+            margin: 0 10px;
+            color: #c5a059;
+        }
+
+        .message {
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 2.5rem;
+            color: #cccccc;
+            padding: 0 1rem;
+        }
+
+        .details {
+            border-top: 1px solid rgba(212, 175, 55, 0.3);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+            padding: 1.5rem 0;
+            margin-bottom: 2rem;
+        }
+
+        .date-time {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            letter-spacing: 1px;
+        }
+
+        .venue {
+            font-size: 1.1rem;
+            color: #e5e5e5;
+            margin-bottom: 0.3rem;
+        }
+
+        .address {
+            font-size: 0.9rem;
+            color: #999;
+        }
+
+        /* Responsive Tasarım */
+        @media (max-width: 480px) {
+            .names { font-size: 3.5rem; }
+            .card { padding: 2rem 1.5rem; }
+        }
     </style>
 </head>
 <body>
+
     <div class="particles">
-        <span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span>
+        <span class="particle"></span>
+        <span class="particle"></span>
+        <span class="particle"></span>
+        <span class="particle"></span>
+        <span class="particle"></span>
     </div>
+
     <div class="card">
         <div class="header">Birlikteliğimizi sonsuzluğa taşırken...</div>
-        <div class="names">Songül <span>&</span> Hayati</div>
-        <div class="message">Hayatımızı birleştireceğimiz bu özel ve anlamlı günde, siz değerli dostlarımızı ve sevdiklerimizi aramızda görmekten büyük onur duyarız.</div>
+        
+        <div class="names">
+            Songül <span>&</span> Hayati
+        </div>
+        
+        <div class="message">
+            Hayatımızı birleştireceğimiz bu özel ve anlamlı günde, 
+            siz değerli dostlarımızı ve sevdiklerimizi aramızda görmekten büyük onur duyarız.
+        </div>
+        
         <div class="details">
             <div class="date-time">25 Eylül 2026 | Saat: 19:30</div>
             <div class="venue">Altıntepe Balo & Davet Salonu</div>
             <div class="address">Alsancak Mahallesi, Kordon Boyu No:123, İzmir</div>
         </div>
     </div>
+
 </body>
 </html>
