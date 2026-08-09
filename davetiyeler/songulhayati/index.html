@@ -3,9 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Düğün Davetiyesi | Songül & Hayati</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Great+Vibes&display=swap" rel="stylesheet">
+    <title>Songül & Hayati Düğün Davetiyesi</title>
+    
+    <!-- Google Fonts: Zarif başlıklar ve okunabilir metinler için -->
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+    
     <style>
+        :root {
+            --primary-color: #c7a7a9; /* Soft rose gold/pudra rengi */
+            --bg-color: #fcf9f9;
+            --text-dark: #333333;
+            --text-light: #777777;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -13,187 +23,287 @@
         }
 
         body {
-            background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
-            min-height: 100vh;
+            font-family: 'Playfair Display', serif;
+            background-color: var(--bg-color);
+            color: var(--text-dark);
+            overflow-x: hidden;
             display: flex;
             justify-content: center;
             align-items: center;
-            font-family: 'Cinzel', serif;
-            overflow: hidden;
-            color: #d4af37;
+            min-height: 100vh;
+            position: relative;
         }
 
-        /* Arka Plan Animasyonları (Canlı Görünüm İçin) */
-        .particles {
-            position: absolute;
+        /* Arka plan animasyonu ve kaplama */
+        .background-overlay {
+            position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            z-index: 1;
+            background: linear-gradient(135deg, #fffafa 0%, #f7e8e9 100%);
+            z-index: -2;
+        }
+
+        /* Uçuşan Kalpler Animasyonu */
+        .hearts-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             pointer-events: none;
+            z-index: -1;
+            overflow: hidden;
         }
 
-        .particle {
+        .heart {
             position: absolute;
-            display: block;
-            width: 5px;
-            height: 5px;
-            background: rgba(212, 175, 55, 0.5);
-            box-shadow: 0 0 10px rgba(212, 175, 55, 0.8);
-            border-radius: 50%;
-            animation: floatUp 10s infinite linear;
+            bottom: -5vh;
+            font-size: 20px;
+            color: rgba(199, 167, 169, 0.4);
+            animation: floatUp linear infinite;
         }
-
-        .particle:nth-child(1) { left: 10%; animation-duration: 8s; width: 3px; height: 3px; }
-        .particle:nth-child(2) { left: 30%; animation-duration: 12s; width: 6px; height: 6px; }
-        .particle:nth-child(3) { left: 50%; animation-duration: 9s; width: 4px; height: 4px; }
-        .particle:nth-child(4) { left: 70%; animation-duration: 15s; width: 7px; height: 7px; }
-        .particle:nth-child(5) { left: 90%; animation-duration: 10s; width: 5px; height: 5px; }
 
         @keyframes floatUp {
-            0% { transform: translateY(100vh) scale(0); opacity: 0; }
-            50% { opacity: 1; }
-            100% { transform: translateY(-10vh) scale(1.5); opacity: 0; }
+            0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(-110vh) rotate(360deg); opacity: 0; }
         }
 
-        /* Davetiye Kartı Tasarımı */
-        .card {
-            background: rgba(15, 32, 39, 0.85);
-            border: 2px solid #d4af37;
-            border-radius: 15px;
-            padding: 3rem 2rem;
-            text-align: center;
+        /* Ana Davetiye Kartı */
+        .invitation-card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
             max-width: 500px;
             width: 90%;
-            z-index: 2;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.5), 0 0 20px rgba(212, 175, 55, 0.2);
-            backdrop-filter: blur(5px);
-            animation: fadeIn 2s ease-out forwards;
-            opacity: 0;
-            transform: translateY(20px);
+            padding: 40px 30px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.05), border: 1px solid rgba(255,255,255,0.5);
+            text-align: center;
+            animation: fadeIn 2s ease-in-out;
+            border: 2px solid var(--primary-color);
+            margin: 20px 0;
         }
 
         @keyframes fadeIn {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
-        .header {
-            font-size: 1.1rem;
-            letter-spacing: 2px;
-            margin-bottom: 2rem;
-            color: #e5e5e5;
-        }
-
-        .names {
+        /* İsimler ve Başlıklar */
+        .couple-names {
             font-family: 'Great Vibes', cursive;
-            font-size: 4.5rem;
+            font-size: 3.5rem;
+            color: var(--primary-color);
+            margin: 20px 0;
             line-height: 1.2;
-            margin-bottom: 1.5rem;
-            text-shadow: 0 0 15px rgba(212, 175, 55, 0.6);
-            animation: pulseGlow 3s infinite alternate;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
-        @keyframes pulseGlow {
-            from { text-shadow: 0 0 10px rgba(212, 175, 55, 0.4); }
-            to { text-shadow: 0 0 25px rgba(212, 175, 55, 0.9); }
+        .ampersand {
+            font-size: 2rem;
+            color: var(--text-light);
+            margin: 10px 0;
+            animation: pulse 2s infinite;
         }
 
-        .names span {
-            font-size: 3rem;
-            display: inline-block;
-            margin: 0 10px;
-            color: #c5a059;
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); color: var(--primary-color); }
+            100% { transform: scale(1); }
         }
 
-        .message {
-            font-size: 1rem;
+        .invitation-text {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 20px;
             line-height: 1.6;
-            margin-bottom: 2.5rem;
-            color: #cccccc;
-            padding: 0 1rem;
         }
 
+        /* Tarih ve Mekan Bilgileri */
         .details {
-            border-top: 1px solid rgba(212, 175, 55, 0.3);
-            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
-            padding: 1.5rem 0;
-            margin-bottom: 1.5rem;
+            margin: 25px 0 15px 0;
+            padding: 20px 10px;
+            border-top: 1px solid rgba(199, 167, 169, 0.3);
+            border-bottom: 1px solid rgba(199, 167, 169, 0.3);
         }
 
-        .date-time {
-            font-size: 1.2rem;
+        .detail-item {
+            margin: 15px 0;
+        }
+
+        .detail-title {
             font-weight: 600;
-            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+
+        /* Geri Sayım Alanı */
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .time-box {
+            background: var(--bg-color);
+            padding: 10px;
+            border-radius: 8px;
+            min-width: 70px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+            border: 1px solid rgba(199, 167, 169, 0.2);
+        }
+
+        .time-box span {
+            display: block;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .time-box .label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
             letter-spacing: 1px;
+            color: var(--text-light);
+            margin-top: 5px;
         }
 
-        .venue {
-            font-size: 1rem;
-            color: #e5e5e5;
-            margin-bottom: 0.3rem;
-        }
-
-        /* Responsive Tasarım */
+        /* Responsive tasarım */
         @media (max-width: 480px) {
-            .names { font-size: 3.5rem; }
-            .card { padding: 2rem 1.5rem; }
+            .couple-names { font-size: 2.8rem; }
+            .countdown { gap: 10px; }
+            .time-box { min-width: 60px; padding: 8px; }
+            .time-box span { font-size: 1.4rem; }
         }
     </style>
 </head>
 <body>
 
-    <div class="particles">
-        <span class="particle"></span>
-        <span class="particle"></span>
-        <span class="particle"></span>
-        <span class="particle"></span>
-        <span class="particle"></span>
-    </div>
+    <!-- Arka plan katmanı -->
+    <div class="background-overlay"></div>
+    
+    <!-- Dinamik uçuşan kalpler için container -->
+    <div class="hearts-container" id="hearts-container"></div>
 
-    <div class="card">
-        <div class="header">Birlikteliğimizi sonsuzluğa taşırken...</div>
-        
-        <div class="names">
-            Songül <span>&</span> Hayati
+    <!-- Davetiye İçeriği -->
+    <div class="invitation-card">
+        <div class="invitation-text">
+            Birlikteliğimizi sonsuzluğa taşıdığımız bu özel günde,<br>
+            siz değerli sevdiklerimizi de aramızda görmekten mutluluk duyarız.
         </div>
-        
-        <div class="message">
-            Hayatımızı birleştireceğimiz bu özel ve anlamlı günde, 
-            siz değerli dostlarımızı ve sevdiklerimizi aramızda görmekten büyük onur duyarız.
+
+        <div class="couple-names">
+            <span>Songül</span>
+            <span class="ampersand">&hearts;</span>
+            <span>Hayati</span>
         </div>
-        
+
         <div class="details">
             <!-- Kına -->
-            <div style="margin-bottom: 1.5rem;">
-                <div style="color: #d4af37; font-size: 1.1rem; letter-spacing: 2px; margin-bottom: 0.5rem;">KINA</div>
-                <div class="date-time">30 Ağustos | Saat: 19:00</div>
-                <div class="venue">Mila Davet Evi</div>
+            <div class="detail-item" style="margin-bottom: 25px;">
+                <div class="detail-title">KINA</div>
+                <div style="color: var(--text-dark); font-weight: 600; font-size: 1.1rem; margin-bottom: 5px;">30 Ağustos | Saat: 19:00</div>
+                <div>Mila Davet Evi</div>
             </div>
             
             <!-- Düğün -->
-            <div>
-                <div style="color: #d4af37; font-size: 1.1rem; letter-spacing: 2px; margin-bottom: 0.5rem;">DÜĞÜN</div>
-                <div class="date-time">31 Ağustos | Saat: 18:00</div>
-                <div class="venue">Şadi Düğün Salonu</div>
+            <div class="detail-item">
+                <div class="detail-title">DÜĞÜN</div>
+                <div style="color: var(--text-dark); font-weight: 600; font-size: 1.1rem; margin-bottom: 5px;">31 Ağustos | Saat: 18:00</div>
+                <div>Şadi Düğün Salonu</div>
             </div>
         </div>
 
         <!-- Aile Bilgileri -->
-        <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.9rem; color: #cccccc; margin-top: 1rem; padding: 0 0.5rem;">
+        <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.95rem; color: var(--text-light); margin-bottom: 30px; padding: 0 10px;">
             <div style="text-align: left; line-height: 1.4;">
-                <span style="color: #d4af37; font-size: 0.75rem; letter-spacing: 1px;">KIZ TARAFI</span><br>
-                Sariya & Ömer<br>ÇAKMAK
+                <div class="detail-title" style="font-size: 0.75rem;">KIZ TARAFI</div>
+                <span style="color: var(--text-dark);">Şefika & Ömer<br>ÇAKMAK</span>
             </div>
             <div style="text-align: right; line-height: 1.4;">
-                <span style="color: #d4af37; font-size: 0.75rem; letter-spacing: 1px;">ERKEK TARAFI</span><br>
-                Fadime & Ramazan<br>IŞIN
+                <div class="detail-title" style="font-size: 0.75rem;">ERKEK TARAFI</div>
+                <span style="color: var(--text-dark);">Fadime & Ramazan<br>IŞIN</span>
+            </div>
+        </div>
+
+        <div class="detail-title">Büyük Güne Kalan Zaman</div>
+        <div class="countdown" id="countdown">
+            <div class="time-box">
+                <span id="days">00</span>
+                <div class="label">Gün</div>
+            </div>
+            <div class="time-box">
+                <span id="hours">00</span>
+                <div class="label">Saat</div>
+            </div>
+            <div class="time-box">
+                <span id="minutes">00</span>
+                <div class="label">Dakika</div>
+            </div>
+            <div class="time-box">
+                <span id="seconds">00</span>
+                <div class="label">Saniye</div>
             </div>
         </div>
     </div>
 
+    <script>
+        /* 1. UÇUŞAN KALPLER ANİMASYONU */
+        function createHearts() {
+            const container = document.getElementById('hearts-container');
+            const heartCount = 20; 
+
+            for(let i = 0; i < heartCount; i++) {
+                let heart = document.createElement('div');
+                heart.classList.add('heart');
+                heart.innerHTML = '&#10084;'; 
+                
+                heart.style.left = Math.random() * 100 + 'vw';
+                heart.style.animationDuration = (Math.random() * 10 + 10) + 's'; 
+                heart.style.animationDelay = (Math.random() * 10) + 's';
+                heart.style.fontSize = (Math.random() * 15 + 10) + 'px';
+                
+                container.appendChild(heart);
+            }
+        }
+        createHearts(); // Kalpleri başlat
+
+        /* 2. CANLI GERİ SAYIM SAYACI (Hedef: 31 Ağustos Düğün Günü) */
+        function startCountdown() {
+            // Yıl: 2026, Ay: 7 (Ağustos 0'dan başladığı için 7'dir), Gün: 31, Saat: 18:00
+            const weddingDate = new Date(2026, 7, 31, 18, 0, 0).getTime();
+
+            const timer = setInterval(function() {
+                const now = new Date().getTime();
+                const distance = weddingDate - now;
+
+                if (distance < 0) {
+                    clearInterval(timer);
+                    document.getElementById("countdown").innerHTML = "<div style='color: var(--primary-color); font-size: 1.2rem; font-weight: 600; margin-top: 15px;'>Büyük gün geldi çattı!</div>";
+                    return;
+                }
+
+                // Zaman hesaplamaları
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                // Ekrana yazdırma (10'dan küçükse başına 0 ekle)
+                document.getElementById("days").innerText = days < 10 ? "0" + days : days;
+                document.getElementById("hours").innerText = hours < 10 ? "0" + hours : hours;
+                document.getElementById("minutes").innerText = minutes < 10 ? "0" + minutes : minutes;
+                document.getElementById("seconds").innerText = seconds < 10 ? "0" + seconds : seconds;
+            }, 1000);
+        }
+        startCountdown(); // Sayacı başlat
+    </script>
 </body>
 </html>
