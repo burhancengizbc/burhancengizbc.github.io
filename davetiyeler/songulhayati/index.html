@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Düğün Davetiyesi | Songül & Hayati</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Great+Vibes&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+            min-height: 100vh;
+            display: flex; justify-content: center; align-items: center;
+            font-family: 'Cinzel', serif; overflow: hidden; color: #d4af37;
+        }
+        .particles { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; pointer-events: none; }
+        .particle { position: absolute; display: block; width: 5px; height: 5px; background: rgba(212, 175, 55, 0.5); box-shadow: 0 0 10px rgba(212, 175, 55, 0.8); border-radius: 50%; animation: floatUp 10s infinite linear; }
+        .particle:nth-child(1) { left: 10%; animation-duration: 8s; width: 3px; height: 3px; }
+        .particle:nth-child(2) { left: 30%; animation-duration: 12s; width: 6px; height: 6px; }
+        .particle:nth-child(3) { left: 50%; animation-duration: 9s; width: 4px; height: 4px; }
+        .particle:nth-child(4) { left: 70%; animation-duration: 15s; width: 7px; height: 7px; }
+        .particle:nth-child(5) { left: 90%; animation-duration: 10s; width: 5px; height: 5px; }
+        @keyframes floatUp { 0% { transform: translateY(100vh) scale(0); opacity: 0; } 50% { opacity: 1; } 100% { transform: translateY(-10vh) scale(1.5); opacity: 0; } }
+        .card { background: rgba(15, 32, 39, 0.85); border: 2px solid #d4af37; border-radius: 15px; padding: 3rem 2rem; text-align: center; max-width: 500px; width: 90%; z-index: 2; box-shadow: 0 15px 35px rgba(0,0,0,0.5), 0 0 20px rgba(212, 175, 55, 0.2); backdrop-filter: blur(5px); animation: fadeIn 2s ease-out forwards; opacity: 0; transform: translateY(20px); }
+        @keyframes fadeIn { to { opacity: 1; transform: translateY(0); } }
+        .header { font-size: 1.1rem; letter-spacing: 2px; margin-bottom: 2rem; color: #e5e5e5; }
+        .names { font-family: 'Great Vibes', cursive; font-size: 4.5rem; line-height: 1.2; margin-bottom: 1.5rem; text-shadow: 0 0 15px rgba(212, 175, 55, 0.6); animation: pulseGlow 3s infinite alternate; }
+        @keyframes pulseGlow { from { text-shadow: 0 0 10px rgba(212, 175, 55, 0.4); } to { text-shadow: 0 0 25px rgba(212, 175, 55, 0.9); } }
+        .names span { font-size: 3rem; display: inline-block; margin: 0 10px; color: #c5a059; }
+        .message { font-size: 1rem; line-height: 1.6; margin-bottom: 2.5rem; color: #cccccc; padding: 0 1rem; }
+        .details { border-top: 1px solid rgba(212, 175, 55, 0.3); border-bottom: 1px solid rgba(212, 175, 55, 0.3); padding: 1.5rem 0; margin-bottom: 2rem; }
+        .date-time { font-size: 1.3rem; font-weight: 600; margin-bottom: 0.5rem; letter-spacing: 1px; }
+        .venue { font-size: 1.1rem; color: #e5e5e5; margin-bottom: 0.3rem; }
+        .address { font-size: 0.9rem; color: #999; }
+        @media (max-width: 480px) { .names { font-size: 3.5rem; } .card { padding: 2rem 1.5rem; } }
+    </style>
+</head>
+<body>
+    <div class="particles">
+        <span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span>
+    </div>
+    <div class="card">
+        <div class="header">Birlikteliğimizi sonsuzluğa taşırken...</div>
+        <div class="names">Songül <span>&</span> Hayati</div>
+        <div class="message">Hayatımızı birleştireceğimiz bu özel ve anlamlı günde, siz değerli dostlarımızı ve sevdiklerimizi aramızda görmekten büyük onur duyarız.</div>
+        <div class="details">
+            <div class="date-time">25 Eylül 2026 | Saat: 19:30</div>
+            <div class="venue">Altıntepe Balo & Davet Salonu</div>
+            <div class="address">Alsancak Mahallesi, Kordon Boyu No:123, İzmir</div>
+        </div>
+    </div>
+</body>
+</html>
